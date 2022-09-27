@@ -42,7 +42,7 @@ void Print2DArray(int[,] matr)
 
 int FindElem(int x, int y, int[,] array)
 {
-    if (x < array.GetLength(0) && y < array.GetLength(1)) return array[x-1, y-1];
+    if (x < array.GetLength(0)+1 && y < array.GetLength(1)+1) return array[x - 1, y - 1];
     else return -1;
 }
 
@@ -55,9 +55,16 @@ int ReadData(string line)
 }
 
 //вывод результата
-void PrintResult(string line)
+void PrintResult(string line, string line2, int num)
 {
-    Console.WriteLine(line);
+    if (num == -1)
+    {
+        Console.WriteLine(line2); //если число не будет найдено выведется сообщение line2
+    }
+    else
+    {
+        Console.WriteLine(line);
+    }
 }
 
 
@@ -65,5 +72,5 @@ int[,] arr2D = Fill2DArray(5, 5, 1, 100);
 Print2DArray(arr2D);
 int x = ReadData("Введите строку элемента: ");
 int y = ReadData("Введите столбец элемента: ");
-int findElm = FindElem(x,y,arr2D);
-PrintResult("Значение на позиции элемента: " + findElm);
+int findElm = FindElem(x, y, arr2D);
+PrintResult("Значение на позиции элемента: " + findElm, "Такого числа в массиве нет.", findElm);
