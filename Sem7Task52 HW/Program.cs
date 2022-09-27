@@ -28,7 +28,7 @@ int[,] Fill2DArray(int countRow, int countColumn, int arrMin, int arrMax)
     return array2D;
 }
 
-//печатаем двумерный  массив
+//печатаем двумерный массив
 void Print2DArray(int[,] array2D)
 {
     for (int i = 0; i < array2D.GetLength(0); i++)
@@ -41,18 +41,18 @@ void Print2DArray(int[,] array2D)
     }
 }
 
+//метод вычисления среднего арифметического в столбце матрицы
 double[] ArithMean(int[,] matr)
 {
-    double[] array = new double[matr.GetLength(1)];
-
-    for (int j = 0; j < matr.GetLength(1); j++)
+    double[] array = new double[matr.GetLength(1)]; //создала новый одномерный массив для вывода результата
+    for (int j = 0; j < matr.GetLength(1); j++) //проходимся по столбцам
     {
-        double sum = 0;
-        for (int i = 0; i < matr.GetLength(0); i++)
+        double sum = 0; //ввели переменную накопитель суммы
+        for (int i = 0; i < matr.GetLength(0); i++) //цикл для строк
         {
-            sum += matr[i, j];
+            sum += matr[i, j]; //складываем значения разных строк в одном столбце
         }
-        array[j] = sum / matr.GetLength(0);
+        array[j] = sum / matr.GetLength(0); //в элемент одномерного массива кладём средние арифметические столбцов
     }
     return array;
 }
