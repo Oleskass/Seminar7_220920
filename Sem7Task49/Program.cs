@@ -50,18 +50,6 @@ void Print2DArray(int[,] array2D)
     }
 }
 
-int[,] Update2DArray(int[,] arr2D)
-{
-    for (int i = 0; i < arr2D.GetLength(0); i+=2) //то же что i=i+2, так как нам нужны только чётные!
-    {
-        for (int j = 0; j < arr2D.GetLength(1); j+=2)
-        {
-            arr2D[i,j] = arr2D[i,j] * arr2D[i,j]; //то же что arr2D[i,j] *= arr2D[i,j];
-        }
-    }
-    return arr2D;
-}
-
 int[,] Update2DArrayMathPow(int[,] arr2D)
 {
     for (int i = 0; i < arr2D.GetLength(0); i+=2) //то же что i=i+2, так как нам нужны только чётные!
@@ -74,20 +62,32 @@ int[,] Update2DArrayMathPow(int[,] arr2D)
     return arr2D;
 }
 
-int[,] Update2DArrayEvenIf(int[,] arr2D)
-{
-    for (int i = 0; i < arr2D.GetLength(0); i++) //то же что i=i+2, так как нам нужны только чётные!
-    {
-        for (int j = 0; j < arr2D.GetLength(1); j++)
-        {
-            if (i % 2 == 0 && j % 2 == 0)
-            {
-            arr2D[i,j] = arr2D[i,j] * arr2D[i,j]; //то же что arr2D[i,j] *= arr2D[i,j];
-            }
-        }
-    }
-    return arr2D;
-}
+// int[,] Update2DArray(int[,] arr2D)
+// {
+//     for (int i = 0; i < arr2D.GetLength(0); i+=2) //то же что i=i+2, так как нам нужны только чётные!
+//     {
+//         for (int j = 0; j < arr2D.GetLength(1); j+=2)
+//         {
+//             arr2D[i,j] = arr2D[i,j] * arr2D[i,j]; //то же что arr2D[i,j] *= arr2D[i,j];
+//         }
+//     }
+//     return arr2D;
+// }
+
+// int[,] Update2DArrayEvenIf(int[,] arr2D)
+// {
+//     for (int i = 0; i < arr2D.GetLength(0); i++) //то же что i=i+2, так как нам нужны только чётные!
+//     {
+//         for (int j = 0; j < arr2D.GetLength(1); j++)
+//         {
+//             if (i % 2 == 0 && j % 2 == 0)
+//             {
+//             arr2D[i,j] = arr2D[i,j] * arr2D[i,j]; //то же что arr2D[i,j] *= arr2D[i,j];
+//             }
+//         }
+//     }
+//     return arr2D;
+// }
 
 int rows = ReadData("Введите количество строк в массиве: ");
 int columns = ReadData("Введите количество столбцов в массиве: ");
